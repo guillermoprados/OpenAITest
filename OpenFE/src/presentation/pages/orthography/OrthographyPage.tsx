@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { AiMessage, TextMessageBox, UserMessage } from '../../components';
+import {
+  AiMessage,
+  TextMessageBox,
+  TextMessageBoxFile,
+  TextMessageBoxSelect,
+  UserMessage,
+} from '../../components';
 import { TypingBubble } from '../../components/chat-bubbles/TypingBubble';
 
 interface OrthographyMessage {
@@ -48,6 +54,25 @@ export const OrthographyPage = () => {
         placeHolder="Write here"
         disableCorrections
       />
+      {/* <TextMessageBoxFile
+        onSendMessage={message => {
+          handlePost(message);
+        }}
+        placeHolder="Write here"
+        disableCorrections
+      /> */}
+      {/* <TextMessageBoxSelect
+        onSendMessage={message => {
+          handlePost(message);
+        }}
+        placeHolder="Write here"
+        disableCorrections
+        options={[
+          { id: '1', text: 'first' },
+          { id: '2', text: 'second' },
+          { id: '3', text: 'third' },
+        ]}
+      /> */}
     </div>
   );
 };
