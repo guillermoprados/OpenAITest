@@ -12,7 +12,15 @@ import {
 } from "../pages";
 import { DashboardLayout } from "../layouts/DashboardLayout";
 
-export const menuRoutes = [
+export interface MenuRoute {
+  to: string;
+  icon: string;
+  title: string;
+  description: string;
+  component: React.ReactElement;
+}
+
+export const menuRoutes: MenuRoute[] = [
   {
     to: "/orthography",
     icon: "fa-solid fa-spell-check",
