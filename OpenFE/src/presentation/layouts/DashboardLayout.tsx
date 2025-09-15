@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { menuRoutes } from "../router/router";
-import { SideBarMenuItem } from "../components/SideBarMenuItem";
+import { SideBarMenuItem } from "../components/sidebar/SideBarMenuItem";
 
 export const DashboardLayout = () => {
   return (

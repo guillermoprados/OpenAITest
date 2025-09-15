@@ -1,4 +1,4 @@
-import type { MenuRoute } from "../router/router";
+import type { MenuRoute } from "../../router/router";
 import { NavLink } from "react-router-dom";
 
 interface Props {
