@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { AiMessage, TextMessageBox, UserMessage } from '../../components';
-import { TypingBubble } from '../../components/chat-bubbles/TypingBubble';
+import { AiMessage, TextMessageBox, UserMessage } from '../components';
+import { TypingBubble } from '../components/chat-bubbles/TypingBubble';
 
-interface OrthographyMessage {
+interface Message {
   text: string;
   source: 'user' | 'ai';
 }
 
-export const OrthographyPage = () => {
+export const ChatTemplatePage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<OrthographyMessage[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   const handlePost = async (message: string) => {
     setIsLoading(true);
