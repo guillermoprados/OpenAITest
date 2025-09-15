@@ -1,5 +1,6 @@
+import { RouterProvider } from "react-router-dom";
+import { router } from "./presentation/router/router";
+
 export const OpenAITestApp = () => {
-  return (
-    <h1 className="text-3xl fade-in font-bold underline">Test Tailwind</h1>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 };
