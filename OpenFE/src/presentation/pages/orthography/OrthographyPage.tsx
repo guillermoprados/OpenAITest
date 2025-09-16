@@ -1,12 +1,7 @@
 import { useState } from 'react';
-import {
-  AiMessage,
-  TextMessageBox,
-  TextMessageBoxFile,
-  TextMessageBoxSelect,
-  UserMessage,
-} from '../../components';
+import { AiMessage, TextMessageBox, UserMessage } from '../../components';
 import { TypingBubble } from '../../components/chat-bubbles/TypingBubble';
+import { orthographyUseCase } from '../../../core/use-cases/orthography.use-case';
 
 interface OrthographyMessage {
   text: string;
@@ -18,13 +13,19 @@ export const OrthographyPage = () => {
   const [messages, setMessages] = useState<OrthographyMessage[]>([]);
 
   const handlePost = async (message: string) => {
-    setIsLoading(true);
-    console.log('Message:', message);
     setMessages(prev => [...prev, { text: message, source: 'user' }]);
 
-    //todo: call use case
+    setIsLoading(true);
+
+    const res = await orthographyUseCase(message);
+
+    if (res.ok && res.message) {
+      setMessages(prev => [...prev, { text: res.message!, source: 'ai' }]);
+    } else {
+      setMessages(prev => [...prev, { text: res.error!, source: 'ai' }]);
+    }
+
     setIsLoading(false);
-    //todo: show gpt message
   };
 
   return (
@@ -54,25 +55,6 @@ export const OrthographyPage = () => {
         placeHolder="Write here"
         disableCorrections
       />
-      {/* <TextMessageBoxFile
-        onSendMessage={message => {
-          handlePost(message);
-        }}
-        placeHolder="Write here"
-        disableCorrections
-      /> */}
-      {/* <TextMessageBoxSelect
-        onSendMessage={message => {
-          handlePost(message);
-        }}
-        placeHolder="Write here"
-        disableCorrections
-        options={[
-          { id: '1', text: 'first' },
-          { id: '2', text: 'second' },
-          { id: '3', text: 'third' },
-        ]}
-      /> */}
     </div>
   );
 };
