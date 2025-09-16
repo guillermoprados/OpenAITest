@@ -1,0 +1,53 @@
+{
+  "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v11/terminal-keeper.json",
+  "theme": "tribe",
+  "active": "default",
+  "activateOnStartup": true,
+  "keepExistingTerminals": false,
+  "sessions": {
+    "default": [
+      [
+        {
+          "name": "OpenFE",
+          "autoExecuteCommands": true,
+          "icon": "empty-window",
+          "color": "terminal.ansiBrightBlue",
+          "commands": [
+            "cd OpenFE"
+          ]
+        },
+        {
+          "name": "OpenBe",
+          "autoExecuteCommands": true,
+          "icon": "server",
+          "color": "terminal.ansiBrightGreen",
+          "commands": [
+            "cd OpenBE"
+          ]
+        }
+      ],
+      [
+        {
+          "name": "OpenFE",
+          "autoExecuteCommands": true,
+          "icon": "rocket",
+          "color": "terminal.ansiMagenta",
+          "commands": [
+            "cd OpenFE",
+            "npm run dev"
+          ]
+        },
+        {
+          "name": "OpenBe",
+          "autoExecuteCommands": true,
+          "icon": "server-process",
+          "color": "terminal.ansiRed",
+          "commands": [
+            "cd OpenBE",
+            "nest start --watch"
+          ]
+        }
+      ]
+    ]
+  }
+}
