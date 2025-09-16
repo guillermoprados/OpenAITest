@@ -12,14 +12,18 @@
           "autoExecuteCommands": true,
           "icon": "empty-window",
           "color": "terminal.ansiBrightBlue",
-          "commands": ["cd OpenFE"]
+          "commands": [
+            "cd OpenFE"
+          ]
         },
         {
           "name": "OpenBe",
           "autoExecuteCommands": true,
           "icon": "server",
           "color": "terminal.ansiBrightGreen",
-          "commands": ["cd OpenBE"]
+          "commands": [
+            "cd OpenBE"
+          ]
         }
       ],
       [
@@ -28,14 +32,20 @@
           "autoExecuteCommands": true,
           "icon": "rocket",
           "color": "terminal.ansiMagenta",
-          "commands": ["cd OpenFE", "npm run dev"]
+          "commands": [
+            "cd OpenFE",
+            "npm run dev"
+          ]
         },
         {
           "name": "OpenBe",
           "autoExecuteCommands": true,
           "icon": "server-process",
           "color": "terminal.ansiRed",
-          "commands": ["cd OpenBE", "npm run start"]
+          "commands": [
+            "cd OpenBE",
+            "nest start --watch"
+          ]
         }
       ]
     ]
